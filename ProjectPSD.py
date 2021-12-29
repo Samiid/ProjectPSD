@@ -69,7 +69,7 @@ def get_classifier(clf_name, params):
     elif clf_name == 'KNN':
         clf = KNeighborsClassifier(n_neighbors=params['K'])
     else:
-        clf = clf = RandomForestClassifier(n_estimators=params['n_estimators'], 
+        clf = clf = LogisticRegressionClassifier(n_estimators=params['n_estimators'], 
             max_depth=params['max_depth'], random_state=1234)
     return clf
 
