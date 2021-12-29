@@ -97,9 +97,32 @@ plt.colorbar()
 
 #plt.show()
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import confusion_matrix, classification_report
-neigh = KNeighborsClassifier(n_neighbors=7, weights='distance', algorithm='auto', leaf_size=30, p=4, metric='euclidean', metric_params=None, n_jobs=None)
-neigh.fit(X_train, y_train)
-pred = neigh.predict(X_test)
-print(classification_report(y_test,pred))
-print(confusion_matrix(y_test,pred))
+def plot_complexity_curve(k_list, knn_model, X_train, X_test, y_train, y_test):
+    
+    train_scores = []
+    test_scores = []
+    
+    # For each k
+    for k in k_list:
+        # Initialize, fit, predict
+        knn = knn_model(k)
+        
+        knn.fit(X_train, y_train)
+        
+        train_scores.append(knn.score(X_train, y_train))
+        test_scores.append(knn.score(X_test, y_test))
+
+    # Plot
+    fig, ax = plt.subplots()
+    
+    ax.plot(k_list, train_scores, label='Training Accuracy', color='red')
+    ax.plot(k_list, test_scores, label='Testing Accuracy', color='black')
+
+    ax.set(title='k-NN with Different Values for $k$',
+           xlabel='Number of Neighbors',
+           ylabel='Accuracy')
+    
+    ax.legend()
+    
+neighbors = np.arange(1, 7)
+plot_complexity_curve(neighbors, KNeighborsClassifier, X_train, X_test, y_train, y_test)
