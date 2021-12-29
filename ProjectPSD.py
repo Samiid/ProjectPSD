@@ -96,19 +96,3 @@ plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 #plt.show()
-fig, ax = plt.subplots()
-    
-    ax.plot(k_list, train_scores, label='Training Accuracy', color='red')
-    ax.plot(k_list, test_scores, label='Testing Accuracy', color='black')
-
-    ax.set(title='k-NN with Different Values for $k$',
-           xlabel='Number of Neighbors',
-           ylabel='Accuracy')
-    
-    ax.legend()
-    
-neighbors = np.arange(1, 7)
-plot_complexity_curve(neighbors, KNeighborsClassifier, X_train, X_test, y_train, y_test)
-    
-neighbors = np.arange(1, 7)
-plot_complexity_curve(neighbors, KNeighborsClassifier, X_train, X_test, y_train, y_test)
