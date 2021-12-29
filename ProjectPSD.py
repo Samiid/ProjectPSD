@@ -64,13 +64,10 @@ params = add_parameter_ui(classifier_name)
 
 def get_classifier(clf_name, params):
     clf = None
-    if clf_name == 'SVM':
-        clf = SVC(C=params['C'])
+    if clf_name == 'Logistic Regression':
+        clf = LogisticRegression(C=params['C'])
     elif clf_name == 'KNN':
         clf = KNeighborsClassifier(n_neighbors=params['K'])
-    else:
-        clf = clf = LogisticRegressionClassifier(n_estimators=params['n_estimators'], 
-            max_depth=params['max_depth'], random_state=1234)
     return clf
 
 clf = get_classifier(classifier_name, params)
