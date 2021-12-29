@@ -96,3 +96,4 @@ plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 #plt.show()
+st.pyplot(fig)
