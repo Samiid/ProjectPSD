@@ -12,7 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.metrics import accuracy_score
 
-st.title('Streamlit Example')
+st.title('Project PSD')
 
 st.write("""
 # Explore different classifier and datasets
@@ -21,7 +21,7 @@ Which one is the best?
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('Iris', 'Breast Cancer', 'Wine')
+    ('Customer Segmentation ')
 )
 
 st.write(f"## {dataset_name} Dataset")
@@ -33,7 +33,7 @@ classifier_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     data = None
-    if name == 'Iris':
+    if name == 'Customer Segmentation ':
         data = datasets.load_iris()
     elif name == 'Wine':
         data = datasets.load_wine()
