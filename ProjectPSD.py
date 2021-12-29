@@ -21,7 +21,7 @@ Which one is the best?
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('Iris', 'Breast Cancer', 'Wine')
+    ('Customer Segmentation')
 )
 
 st.write(f"## {dataset_name} Dataset")
