@@ -21,14 +21,14 @@ Which one is the best?
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('Customer Segmentation')
+    ('Customer Segmentation',)
 )
 
 st.write(f"## {dataset_name} Dataset")
 
 classifier_name = st.sidebar.selectbox(
     'Select classifier',
-    ('KNN', 'SVM')
+    ('KNN')
 )
 
 def get_dataset(name):
