@@ -96,4 +96,10 @@ plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 #plt.show()
-
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, classification_report
+neigh = KNeighborsClassifier(n_neighbors=7, weights='distance', algorithm='auto', leaf_size=30, p=4, metric='euclidean', metric_params=None, n_jobs=None)
+neigh.fit(X_train, y_train)
+pred = neigh.predict(X_test)
+print(classification_report(y_test,pred))
+print(confusion_matrix(y_test,pred))
