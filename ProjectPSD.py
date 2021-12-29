@@ -36,6 +36,7 @@ def get_dataset(name):
     if name == 'Customer Segmentation':
         data = datasets.load_Customer_Segmentation()
     elif name == 'Wine':
+        data = datasets.load_wine()
     X = data.data
     y = data.target
     return X, y
