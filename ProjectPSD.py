@@ -33,8 +33,8 @@ classifier_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     data = None
-    if name == 'Iris':
-        data = datasets.load_iris()
+    if name == 'Customer Segmentation':
+        data = datasets.load_test.csv()
     elif name == 'Wine':
         data = datasets.load_wine()
     else:
